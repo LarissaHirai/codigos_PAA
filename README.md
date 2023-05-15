@@ -1,4 +1,5 @@
 # Códigos da matéria de Projeto e Análise de Algoritmos (UFT)
+#### Alunas: Fernanda Plessim e Larissa Hirai
 ## Descrição do trabalho
 ### Algoritmos de ordenação
 - `+3`: Implementar todos os algoritmos ensinados em aula e escolher mais 3 diferentes.
