@@ -1,4 +1,18 @@
 # Códigos da matéria de Projeto e Análise de Algoritmos (UFT)
+## Descrição do trabalho
+### Algoritmos de ordenação
+- `+3`: Implementar todos os algoritmos ensinados em aula e escolher mais 3 diferentes.
+- `Tempo de execução`: Comparar o tempo de excução dos algoritmos de ordenação.
+- `Quantidade de comparação`: Comparar a quantidade de comparação dos algoritmos de ordenação.
+- `Quantidade de trocas`: Comparar a quantidade de trocas dos algoritmos de ordenação.
+### Entrada
+- `Ler de arquivo`: Leitura de arquivos com dados.
+- `Tamanho`: 10^3, 10^4, 10^5{2,...,9}10^5, 10^6
+- `Ordem de ordenação`: Ordem crescente, ordem decerscente e aleatório.
+### Relatório
+- Latex
+- Gráficos gnuplot
+
 ## Algoritmos ensinados na aula
 - [Bubble Sort](https://pt.wikipedia.org/wiki/Bubble_sort)
 - [Selection Sort](https://pt.wikipedia.org/wiki/Selection_sort)
