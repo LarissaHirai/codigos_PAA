@@ -24,6 +24,8 @@ void preferencia(int *potencia,int *centena,char *ordenacao){
     printf("\nQual o numero de elementos a serem ordenados? 10 na potencia de 3, 4, 5 ou 6? ");
     scanf("%d", potencia);
 
+    *centena=1;
+
     if (*potencia == 5) {
         printf("\nQual a centena de milhar desejada? de 1 a 9");
         scanf("%d", centena);
@@ -34,7 +36,7 @@ void preferencia(int *potencia,int *centena,char *ordenacao){
 
 }
 
-void entrada(int potencia,int centena,char ordenacao,FILE *arquivo){
+FILE* entrada(int potencia,int centena,char ordenacao,FILE *arquivo){
     if(potencia==3){
         if(ordenacao=='a'){
             arquivo = fopen("entrada_a_10a3.txt", "r");
@@ -168,39 +170,50 @@ void entrada(int potencia,int centena,char ordenacao,FILE *arquivo){
                 }
             }
         }
-        return;
+        return arquivo;
     }
 }
 
 int main() {
     FILE *arquivo;
     int potencia;
-    int centena = 1;
+    int centena;
     int tam_vetor;
     char ordenacao;
 
     preferencia(&potencia,&centena,&ordenacao);
 
-    entrada(potencia,centena,ordenacao,arquivo);
+    printf("\n potencia: %d",potencia);
+    printf("\n centena: %d",centena);
+    printf("\n ordenacao: %c",ordenacao);
 
-    tam_vetor = centena * 10 * (pow(10, potencia));
+    arquivo=entrada(potencia,centena,ordenacao,arquivo);
+
+    tam_vetor = centena*(pow(10, potencia));
 
     int numeros[tam_vetor];
     int num_elementos = 0; // Variável para acompanhar o número de elementos
+
 
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo de entrada.\n");
         return 1;
     }
 
+    
+
     while (fscanf(arquivo, "%d", &numeros[num_elementos]) == 1) {
+        printf("\ntam_vetor: %d",tam_vetor);
+        printf("\nnum_elementos: %d",num_elementos);
         if (num_elementos < tam_vetor) {
             num_elementos++;
         } else {
-            printf("Limite máximo de números excedido.\n");
+            printf("\nLimite maximo de numeros excedido.\n");
             break;
         }
     }
+
+    printf("Aqui2");
 
     fclose(arquivo);
 
